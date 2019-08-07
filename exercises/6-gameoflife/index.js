@@ -6,9 +6,9 @@ const p = (x,y) => {
   return { x, y }
 }
 const cells = [];
-const maxCells = 100;
+const maxCells = 200;
 let field = [];
-const screenSize = p(800, 800);
+const screenSize = p(600, 600);
 
 const setupField = (rows, columns) => {
   const size = screenSize.y / rows;
@@ -123,6 +123,7 @@ function onMouseHold() {
 function draw() {
   background(0);
   onMouseHold();
-  frameRate(12);
+  // frameRate(12);
+  stroke(255);
   scanner();  
 }

@@ -2,14 +2,14 @@
   "name": "p5examples",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./scripts/start.js",
   "scripts": {
-  	"start": "node ./scripts/start.js",
+    "start": "node ./scripts/start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Francisco Mabres",
   "license": "MIT",
   "dependencies": {
-    "browser-sync": "^2.26.3"
+    "browser-sync": "^2.26.7"
   }
 }
