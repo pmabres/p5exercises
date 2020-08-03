@@ -28,13 +28,19 @@ var b = 0;
 var col = clr(0,0,0);
 
 const modifyPos = ({ x, y }) => {
-  let adder = valueShifter(x / screenSize.x, 0.6, 0, 0.1);
+  
+  let value = Math.abs(0.5 - (x / screenSize.x));
+  console.log(value);
+  let adder = valueShifter(value, 0.5, 0, 0.1);
   x = cos(counter*0.5) * b + halfP.x;
   y = sin(counter*0.5) * b + halfP.y;
   b += adder;
   counter++;
 
   return p(x,y); 
+}
+const smoothStep = (x, max) => {
+  return ((sin (x-0.5*PI))*max/2-1)+max/2;
 }
 const valueShifter = (val, max, min, step) => {
   if (val >= max) {
@@ -47,11 +53,11 @@ const valueShifter = (val, max, min, step) => {
 }
 
 const morphColor = ({r, g, b}) => {
-  r = (r + 1);
-  if (r >= 255)
-     g = (g + 1);
-  if (g >= 255)
-     b = (b + 1); 
+  r = smoothStep(millis()*0.0001, 255);
+  // if (r >= 255)
+  //    g = (g + 1);
+  // if (g >= 255)
+  //    b = (b + 1); 
   //if (r < 255) {
     //r = colorShifter(r);
   //}

@@ -1,5 +1,5 @@
 
 	var script = document.createElement('script');
-	script.src = './7-drawing/index.js';
+	script.src = './9-mandelbrot/index.js';
 	document.head.appendChild(script); 
 	
